@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>Comentarios</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="closeModal()">
+          <span ion-text></span>
+          <ion-icon name="close-circle"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list *ngIf="datosRecibidos">
+        <ion-item>
+          <ion-avatar item-start>
+            <img [src]="datosRecibidos.img">
+          </ion-avatar>
+          <h2>{{datosRecibidos.name}}</h2>
+        </ion-item>
+        <ion-item *ngFor="let comt of comments['comments']" text-wrap>
+            {{comt.comment}}
+        </ion-item>
+    </ion-list>
+   
+
+
+    <!-- <ion-list *ngFor="let comt of comments">
+      <ion-list-header text-center>
+        Listado
+      </ion-list-header>
+      {{comt.name}}
+      <ion-item-group>
+        <ion-item  text-wrap>
+          {{comt.comments[0].comment}}
+        </ion-item>
+      </ion-item-group>
+    </ion-list> -->
+</ion-content>

@@ -1,0 +1,99 @@
+<!--
+  Generated template for the OncardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>oncard</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-card *ngFor="let item of informacion;let i = index">
+        <ion-item>
+  
+          <ion-card-title>{{item.name}}</ion-card-title>
+          <!-- <ion-row>
+            <ion-col col-12>
+              <rating [(ngModel)]="item.rate"
+                      readOnly="false"
+                      max="5"
+                      emptyStarIconName="star-outline"
+                      halfStarIconName="star-half"
+                      starIconName="star"
+                      nullable="false"
+                      (ngModelChange)="onModelChange($event)"> 
+              </rating>
+            </ion-col>
+              <ion-col col-5>
+                {{item.rate}}
+              </ion-col>
+              <ion-col col-4>
+                (60)
+              </ion-col>
+            </ion-row> -->
+          <ion-row>
+            <ion-col>
+              {{item.rate}}
+            </ion-col>
+            <ion-col>
+              <rating [(ngModel)]="item.rate"
+                      readOnly="false"
+                      max="5"
+                      emptyStarIconName="star-outline"
+                      halfStarIconName="star-half"
+                      starIconName="star"
+                      nullable="false"
+                      (ngModelChange)="onModelChange($event,i)"> 
+              </rating>
+            </ion-col>
+            <ion-col>
+             ( {{item.calification}} )
+            </ion-col>
+          </ion-row>
+        </ion-item>
+          <img [src]="item.img" style="width:100%; height:70%">
+  
+        
+        <!-- <img src="http://placehold.it/500x200" /> -->
+        
+        <ion-card-content>
+          <!-- <ion-card-title>Bar Milenium</ion-card-title> -->
+    
+          <p>{{item.address}}</p>
+        </ion-card-content>
+  
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-left clear small (click)="likeClick()">
+              <ion-icon name="md-thumbs-up"></ion-icon>
+              <div>{{item.like}}</div>
+              <!-- <ion-badge item-end color="danger">{{like}}</ion-badge> -->
+            </button>
+          </ion-col>
+
+          <ion-col>
+            <button ion-button icon-left clear small (click)="nolikeClick()">
+                <ion-icon name="md-thumbs-down" color="danger"></ion-icon>
+                <div>{{item.nolike}}</div>
+              </button>
+          </ion-col>
+
+          <ion-col>
+            <button ion-button icon-left clear small (click)="openCommentsModal(item)">
+              <ion-icon name="text"></ion-icon>
+              <div text-capitalize>{{item.comments.length }} Comments</div>
+            </button>
+          </ion-col>
+
+        </ion-row>
+  
+      </ion-card>
+
+</ion-content>

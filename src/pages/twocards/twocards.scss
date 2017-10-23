@@ -1,0 +1,31 @@
+.ios, .md {
+    
+    page-twocards {
+
+        .rating{
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        ul.rating[_ngcontent-c0] li[_ngcontent-c0] {
+            display: inline;
+            border: 0px;
+            background: none;
+            padding: 0px 2px;
+        }
+
+        ul {
+            padding: 0px;
+          
+            &.rating li {
+              //padding: 5px 10px !important;
+            //   padding-left: 16px !important;
+              background: none;
+              color: #ffb400;
+          
+              ion-icon {
+                font-size: 15px;
+              }
+            }
+          }
+    }
+}

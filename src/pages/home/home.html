@@ -7,8 +7,63 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+    <ion-buttons>
+      <button ion-button block (click)="openPageOne()">Page1</button>
+      <button ion-button block (click)="twoPageOne()">Page2</button>
+    </ion-buttons>
+<!--   
+  <ion-list [virtualScroll]="imagesunsplash" [bufferRatio]="5">
+    <div>
+      <div *virtualItem="let img" col-4>
+        <img [src]="img.url" style="width:50px; height:50px">
+      </div>
+    </div>
+  </ion-list> -->
+
+  <!-- <ion-list [virtualScroll]="imagesunsplash" [bufferRatio]="5">
+      <ion-card *virtualItem="let img">
+          <div>
+            <img [src]="img.url" style="width:100%; height:100%">
+          </div>
+          <ion-card-content>
+              <ion-card-title>
+                  Nine Inch Nails Live
+                  </ion-card-title>
+                <p>
+                  The most popular industrial group ever, and largely
+                  responsible for bringing the music to a mass audience.
+                </p>
+          </ion-card-content>
+      </ion-card>
+  </ion-list> -->
+
+
+  <!-- <div class="card list">
+      <div class="item item-divider">
+          Cabecera
+     </div> 
+     <div class="item item-text-wrap">
+          Texto de la tarjeta
+     </div>
+     <div class="item item-divider">
+          Pie
+     </div>
+  </div> -->
+
+  <!-- <ion-card [virtualScroll]="imagesunsplash" [bufferRatio]="5">
+      <div *virtualItem="let img">
+        <img [src]="img.url" style="width:105px; height:105px"/>
+      </div>
+      <ion-card-content item-right>
+        <ion-card-title>
+          Nine Inch Nails Live
+          </ion-card-title>
+        <p>
+          The most popular industrial group ever, and largely
+          responsible for bringing the music to a mass audience.
+        </p>
+      </ion-card-content>
+    </ion-card> -->
+
 </ion-content>
