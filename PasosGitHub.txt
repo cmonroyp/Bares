@@ -4,6 +4,7 @@ git commit -m "mi primer commit"
 git remote add origin https://github.com/cmonroyp/Bares.git --link del repositorio
 git push -u origin master --enviamos los archivos al repositorio gitHub
 
-
 --Copiar repositorio en un pc diferente.
-npm install https://github.com/cmonroyp/Bares.git
+1. Descargar el proyecto de GitHub
+2. instalar los modules => npm install
+3. ionic serve
