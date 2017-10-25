@@ -51,21 +51,29 @@ export class OncardPage {
   //          })
   //      }
 
-  onModelChange(event:any,index:number){
-    console.log(event)
-    console.log(index)
-    this.prueba(index);
+  onModelChange(event:any,data:any,index:number){
+    // console.log(event)
+    // console.log(index)
+    this.prueba(data,index);
   }
 
-  prueba(originalTodo){
+  prueba(items,idx){
 
-    const index= this.informacion.indexOf(originalTodo);
-    this.informacion=[
-      ...this.informacion.slice(0, index),
-      ...this.informacion.slice(index+1)
-    ]
+   let object ={
+      name:items.name,
+      rate: items.rate,
+      img: items.img,
+      like: items.like,
+      nolike:items.nolike,
+      calification: items.calification + 1 ,
+      address: items.address,
+      comments: items.comments
+    }
+
+   this.informacion.splice(idx, 1,object);
 
     console.log(this.informacion)
+
   }
 
   likeClick(){
