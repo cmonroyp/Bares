@@ -5,6 +5,6 @@ git remote add origin https://github.com/cmonroyp/Bares.git --link del repositor
 git push -u origin master --enviamos los archivos al repositorio gitHub
 
 --Copiar repositorio en un pc diferente.
-1. Descargar el proyecto de GitHub
+1. git clone https://github.com/cmonroyp/Bares.git
 2. instalar los modules => npm install
 3. ionic serve
