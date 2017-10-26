@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { BARES } from '../../data/bar.datamodel';
+import { ModalcommentPage } from './modalcomment/modalcomment';
 
 
 
@@ -15,7 +16,7 @@ export class OncardPage {
   //_urlImage:string = "https://unsplash.com/photos/iwWJFIlnDm4"
   imagesunsplash:any[] = [];
 
-  rate:number =3.5;  
+  //rate:number =3.5;  
   like:number = 12
   nolike:number = 3
   countComent:number;
@@ -28,6 +29,13 @@ export class OncardPage {
     {idx:3,comment:'Falta Mejorar'}
   ] 
 
+  rate =[
+    {1:'No me gustó en Absoluto.',comment:''},
+    {2:'No me gustó.',comment:''},
+    {3:'Está Bien.',comment:''},
+    {4:'Me gustó.',comment:''},
+    {5:'Me encantó.',comment:''}
+  ]
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public modalCtrl: ModalController) {
   }
@@ -86,7 +94,7 @@ export class OncardPage {
 
   openCommentsModal(data:any){
     console.log('data enviada',data)
-    let modal = this.modalCtrl.create('ModalcommentPage',{'comment': data});
+    let modal = this.modalCtrl.create(ModalcommentPage,{'comment': data});
     modal.present();
   }
 

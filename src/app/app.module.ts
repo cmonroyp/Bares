@@ -8,6 +8,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { OncardPage } from './../pages/oncard/oncard';
 import { TwocardsPage } from './../pages/twocards/twocards';
+import { ModalcommentPage } from '../pages/oncard/modalcomment/modalcomment';
+
 // Import ionic2-rating module
 import { Ionic2RatingModule } from 'ionic2-rating';
 
@@ -16,7 +18,8 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     MyApp,
     HomePage,
     OncardPage,
-    TwocardsPage
+    TwocardsPage,
+    ModalcommentPage
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     MyApp,
     HomePage,
     OncardPage,
-    TwocardsPage
+    TwocardsPage,
+    ModalcommentPage
   ],
   providers: [
     StatusBar,
