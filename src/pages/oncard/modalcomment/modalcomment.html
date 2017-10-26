@@ -16,13 +16,13 @@
 <ion-content padding>
 
   <ion-item>
-    
-      <ion-item>
-          <ion-avatar item-start>
-            <img [src]="datosRecibidos.img">
-          </ion-avatar>
-          <h2>{{datosRecibidos.name}}</h2>
-      </ion-item>
+        <ion-item>
+            <ion-avatar item-start>
+              <img [src]="datosRecibidos.img">
+            </ion-avatar>
+            <h2>{{datosRecibidos.name}}</h2>
+        </ion-item>
+      
       <ion-row>
         <ion-col text-center>
           
@@ -41,14 +41,14 @@
 
 
         <ion-item no-lines>
-            <ion-textarea placeholder="Deje Su Comentario." 
+            <ion-textarea placeholder="Deje Su Comentario."
                           text-center
-                          [(ngModel)]="comment">            
+                          [(ngModel)]="comment">
             </ion-textarea> 
           </ion-item>
-          <ion-row>
+          <ion-row text-right>
             <ion-col>
-              <button ion-button small clear item-end>Enviar</button>
+              <button ion-button small clear (click)="calification(rate,comment)">Enviar</button>
             </ion-col>
           </ion-row>
         
@@ -66,7 +66,7 @@
           </ion-avatar>
           <h2>{{datosRecibidos.name}}</h2>
         </ion-item> -->
-        <ion-item *ngFor="let comt of comments['comments']" text-wrap>
+        <ion-item *ngFor="let comt of datosRecibidos['comments']" text-wrap>
             {{comt.comment}}
         </ion-item>
     </ion-list>

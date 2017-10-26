@@ -16,14 +16,15 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 export class ModalcommentPage {
 
   rateUser =[
-    {idx:1, valor:'No me gustó en Absoluto.',comment:''},
-    {idx:2,valor:'No me gustó.',comment:''},
-    {idx:3,valor:'Está Bien.',comment:''},
-    {idx:4,valor:'Me gustó.',comment:''},
-    {idx:5,valor:'Me encantó.',comment:''}
+    {idx:1, valor:'No me gustó en Absoluto.'},
+    {idx:2,valor:'No me gustó.'},
+    {idx:3,valor:'Está Bien.'},
+    {idx:4,valor:'Me gustó.'},
+    {idx:5,valor:'Me encantó.'}
   ]
+
   valor:string;
-  character;
+
   comments:any[] =[];
   comment:string="";
   datosRecibidos:object ={};
@@ -32,15 +33,15 @@ export class ModalcommentPage {
               private viewCtrl: ViewController) {
 
               }
-              
+
   ionViewDidLoad() {
-    this.comments = this.navParams.get('comment');
-    this.datosRecibidos = this.comments;
+    this.comments = [this.navParams.get('comment')];
+    this.datosRecibidos = this.comments[0];
     console.log(this.comments);
     console.log('datos recibidos',this.datosRecibidos);
 }
 
-  closeModal() {    
+  closeModal() {
         this.viewCtrl.dismiss();
       }
 
@@ -54,7 +55,33 @@ onModelChange(event:any){
       
     }
   }
+}
 
+
+calification(rate:number,comment:any){
+
+let obj ={
+  comment: comment
+}
+
+console.log(obj)
+  let object ={
+    name: this.datosRecibidos['name'],
+    rate: rate,
+    img: this.datosRecibidos['img'],
+    like: this.datosRecibidos['like'],
+    nolike:this.datosRecibidos['nolike'],
+    calification: this.datosRecibidos['calification'],
+    address: this.datosRecibidos['address'],
+    comments: this.datosRecibidos['comments'] ,
+    valor:this.valor
+  }
+
+  
+  this.comments.splice(0,1,object)
+  console.log(this.comments)
+  console.log('raiting', rate);
+  console.log('comentario', comment)
 }
 
 }
