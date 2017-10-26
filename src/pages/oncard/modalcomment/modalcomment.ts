@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
-/**
- * Generated class for the ModalcommentPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-modalcomment',
@@ -23,6 +16,8 @@ export class ModalcommentPage {
     {idx:5,valor:'Me encantó.'}
   ]
 
+  comentarios=[];
+
   valor:string;
 
   comments:any[] =[];
@@ -37,8 +32,10 @@ export class ModalcommentPage {
   ionViewDidLoad() {
     this.comments = [this.navParams.get('comment')];
     this.datosRecibidos = this.comments[0];
-    console.log(this.comments);
-    console.log('datos recibidos',this.datosRecibidos);
+    this.comentarios = this.comments[0].comments
+    // console.log('comentarios' , this.comentarios);
+    // console.log(this.comments);
+    // console.log('datos recibidos',this.datosRecibidos);
 }
 
   closeModal() {
@@ -60,28 +57,23 @@ onModelChange(event:any){
 
 calification(rate:number,comment:any){
 
-let obj ={
-  comment: comment
-}
-
-console.log(obj)
-  let object ={
-    name: this.datosRecibidos['name'],
-    rate: rate,
-    img: this.datosRecibidos['img'],
-    like: this.datosRecibidos['like'],
-    nolike:this.datosRecibidos['nolike'],
-    calification: this.datosRecibidos['calification'],
-    address: this.datosRecibidos['address'],
-    comments: this.datosRecibidos['comments'] ,
-    valor:this.valor
+    this.comentarios.push({comment});
+    let quality:number = this.datosRecibidos['calification']
+    
+    console.log(quality)
+    let object ={
+      name: this.datosRecibidos['name'],
+      rate: rate,
+      img: this.datosRecibidos['img'],
+      like: this.datosRecibidos['like'],
+      nolike:this.datosRecibidos['nolike'],
+      calification: quality + 1 ,
+      address: this.datosRecibidos['address'],
+      comments: this.comentarios ,
+      valor:this.valor
   }
-
-  
   this.comments.splice(0,1,object)
-  console.log(this.comments)
-  console.log('raiting', rate);
-  console.log('comentario', comment)
-}
+console.log(this.comments)
+  }
 
 }

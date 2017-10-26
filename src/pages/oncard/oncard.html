@@ -44,13 +44,12 @@
             </ion-col>
             <ion-col>
               <rating [(ngModel)]="item.rate"
-                      readOnly="false"
+                      readOnly="true"
                       max="5"
                       emptyStarIconName="star-outline"
                       halfStarIconName="star-half"
                       starIconName="star"
-                      nullable="false"
-                      (ngModelChange)="onModelChange($event,item,i)"> 
+                      nullable="false"> 
               </rating>
             </ion-col>
             <ion-col>
@@ -88,7 +87,7 @@
           <ion-col>
             <button ion-button icon-left clear small (click)="openCommentsModal(item)">
               <ion-icon name="text"></ion-icon>
-              <div text-capitalize>{{item.comments.length }} Comments</div>
+              <div text-capitalize>{{item.comments.length }} Califíquenos</div>
             </button>
           </ion-col>
 
