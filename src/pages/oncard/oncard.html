@@ -40,7 +40,7 @@
             </ion-row> -->
           <ion-row>
             <ion-col>
-              {{item.rate}}
+              {{item.rate | number}}
             </ion-col>
             <ion-col>
               <rating [(ngModel)]="item.rate"
@@ -70,7 +70,7 @@
   
         <ion-row>
           <ion-col>
-            <button ion-button icon-left clear small (click)="likeClick()">
+            <button ion-button icon-left clear small (click)="likeClick(item,i)">
               <ion-icon name="md-thumbs-up"></ion-icon>
               <div>{{item.like}}</div>
               <!-- <ion-badge item-end color="danger">{{like}}</ion-badge> -->
@@ -78,14 +78,14 @@
           </ion-col>
 
           <ion-col>
-            <button ion-button icon-left clear small (click)="nolikeClick()">
+            <button ion-button icon-left clear small (click)="nolikeClick(item,i)">
                 <ion-icon name="md-thumbs-down" color="danger"></ion-icon>
                 <div>{{item.nolike}}</div>
               </button>
           </ion-col>
 
           <ion-col>
-            <button ion-button icon-left clear small (click)="openCommentsModal(item)">
+            <button ion-button icon-left clear small (click)="openCommentsModal(item,i)">
               <ion-icon name="text"></ion-icon>
               <div text-capitalize>{{item.comments.length }} Califíquenos</div>
             </button>

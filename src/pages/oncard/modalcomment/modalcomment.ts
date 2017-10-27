@@ -23,6 +23,7 @@ export class ModalcommentPage {
   comments:any[] =[];
   comment:string="";
   datosRecibidos:object ={};
+  object:object = {};
   rate:number = 0;
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private viewCtrl: ViewController) {
@@ -39,7 +40,7 @@ export class ModalcommentPage {
 }
 
   closeModal() {
-        this.viewCtrl.dismiss();
+        this.viewCtrl.dismiss(this.object);
       }
 
       
@@ -59,11 +60,19 @@ calification(rate:number,comment:any){
 
     this.comentarios.push({comment});
     let quality:number = this.datosRecibidos['calification']
-    
+    let start:number = this.datosRecibidos['rate']
+    let startCalification:number =0;
+
+      if(start < 5 ){
+        startCalification =  (rate/50)+start
+      }
+      else{
+        startCalification = start;
+      }
     console.log(quality)
-    let object ={
+     this.object ={
       name: this.datosRecibidos['name'],
-      rate: rate,
+      rate: startCalification,
       img: this.datosRecibidos['img'],
       like: this.datosRecibidos['like'],
       nolike:this.datosRecibidos['nolike'],
@@ -72,8 +81,8 @@ calification(rate:number,comment:any){
       comments: this.comentarios ,
       valor:this.valor
   }
-  this.comments.splice(0,1,object)
-console.log(this.comments)
+  this.comments.splice(0,1,this.object)
+    console.log(this.comments)
   }
 
 }
