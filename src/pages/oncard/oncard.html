@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Listado de Bares!.</ion-title>
+    <ion-title>Listado de Bares</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -68,7 +68,7 @@
           <p>{{item.address}}</p>
         </ion-card-content>
   
-        <ion-row>
+        <ion-row col-12 text-center>
           <ion-col>
             <button ion-button icon-left clear small (click)="likeClick(item,i)">
               <ion-icon name="md-thumbs-up"></ion-icon>
@@ -85,9 +85,16 @@
           </ion-col>
 
           <ion-col>
-            <button ion-button icon-left clear small (click)="openCommentsModal(item,i)">
+            <button ion-button icon-left clear small (click)="openCommentsModal(item)">
               <ion-icon name="text"></ion-icon>
-              <div text-capitalize>{{item.comments.length }} Califíquenos</div>
+              <div text-capitalize>{{item.comments.length }}</div>
+            </button>
+          </ion-col>
+
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="md-more"></ion-icon>
+              <!-- <div text-capitalize>{{item.comments.length }} Califíquenos</div> -->
             </button>
           </ion-col>
 

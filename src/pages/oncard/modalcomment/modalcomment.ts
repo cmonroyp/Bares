@@ -23,7 +23,7 @@ export class ModalcommentPage {
   comments:any[] =[];
   comment:string="";
   datosRecibidos:object ={};
-  object:object = {};
+  object:object;
   rate:number = 0;
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private viewCtrl: ViewController) {
@@ -40,7 +40,15 @@ export class ModalcommentPage {
 }
 
   closeModal() {
-        this.viewCtrl.dismiss(this.object);
+        if( this.object != null ){
+          console.log('entro lleno')
+          this.viewCtrl.dismiss(this.object);
+        }
+        else
+        {
+          console.log('entro vacio')
+          this.viewCtrl.dismiss();
+        }
       }
 
       

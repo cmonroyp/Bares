@@ -114,8 +114,9 @@ export class OncardPage {
     let modal = this.modalCtrl.create(ModalcommentPage,{'comment': data});
 
     modal.onDidDismiss((data)=>{
-      console.log(data)
-     // this.informacion.splice(idx,1,data);
+      if(data){
+        this.informacion.splice(idx,1,data);
+      }
       console.log('datos que llegan',data)
     })
     modal.present();
