@@ -1,0 +1,31 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title text-center>Reservas</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="closeModal()">
+              <span ion-text></span>
+              <ion-icon name="close-circle"></ion-icon>
+            </button>
+          </ion-buttons>
+      </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list-header text-center>
+        Reservas
+      </ion-list-header>
+  <ion-list *ngFor="let item of list;let i = index">    
+    <ion-item>
+      <ion-icon name="ios-beer-outline" item-left large ></ion-icon>
+      <h2 item-start>{{item.mesa}}</h2>
+      <!-- <div item-end *ngIf="state; then checked="true" ">{{item.estado[0].state}}</div> -->
+      <p item-end *ngIf="item.estado[0].state === 'reservada'" checked="true">{{item.estado[0].state}}</p>
+      <p item-end *ngIf="item.estado[0].state === 'libre' " checked="false" disabled>{{item.estado[0].state}}</p>
+      <ion-toggle></ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>

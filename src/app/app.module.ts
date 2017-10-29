@@ -9,6 +9,8 @@ import { HomePage } from '../pages/home/home';
 import { OncardPage } from './../pages/oncard/oncard';
 import { TwocardsPage } from './../pages/twocards/twocards';
 import { ModalcommentPage } from '../pages/oncard/modalcomment/modalcomment';
+import { ModalpositionPage } from '../pages/modalposition/modalposition';
+import { ModalreservasPage } from '../pages/modalreservas/modalreservas';
 
 // Import ionic2-rating module
 import { Ionic2RatingModule } from 'ionic2-rating';
@@ -19,7 +21,9 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     HomePage,
     OncardPage,
     TwocardsPage,
-    ModalcommentPage
+    ModalcommentPage,
+    ModalpositionPage,
+    ModalreservasPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,9 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     HomePage,
     OncardPage,
     TwocardsPage,
-    ModalcommentPage
+    ModalcommentPage,
+    ModalpositionPage,
+    ModalreservasPage
   ],
   providers: [
     StatusBar,

@@ -15,6 +15,39 @@
 
 <ion-content padding>
 
+    <!-- <ion-grid>
+        <ion-row>
+            <ion-col col-4>
+                <ion-item>
+                    <ion-label stacked>Filter</ion-label>
+                    <ion-select interface="popover">
+                        <ion-option value="10">10</ion-option>
+                        <ion-option value="20">20</ion-option>
+                    </ion-select>
+                </ion-item>
+            </ion-col>
+            <ion-col col-4>
+                <ion-item>
+                    <ion-label>Due Date</ion-label>
+                    <ion-select interface="popover">
+                        <ion-option value="10">10</ion-option>
+                        <ion-option value="20">20</ion-option>
+                    </ion-select>
+                </ion-item>
+            </ion-col>
+            <ion-col col-4>
+                <ion-item>
+                    <ion-label>Descending</ion-label>
+                    <ion-select interface="popover">
+                        <ion-option value="10">10</ion-option>
+                        <ion-option value="20">20</ion-option>
+                    </ion-select>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid> -->
+
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
     <ion-card *ngFor="let item of informacion;let i = index">
         <ion-item>
   
@@ -68,38 +101,47 @@
           <p>{{item.address}}</p>
         </ion-card-content>
   
-        <ion-row col-12 text-center>
-          <ion-col>
-            <button ion-button icon-left clear small (click)="likeClick(item,i)">
-              <ion-icon name="md-thumbs-up"></ion-icon>
-              <div>{{item.like}}</div>
-              <!-- <ion-badge item-end color="danger">{{like}}</ion-badge> -->
-            </button>
-          </ion-col>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-3>
+              <button ion-button icon-left clear small (click)="likeClick(item,i)">
+                <ion-icon name="md-thumbs-up"></ion-icon>
+                <div>{{item.like}}</div>
+                <!-- <ion-badge item-end color="danger">{{like}}</ion-badge> -->
+              </button>
+            </ion-col>
 
-          <ion-col>
-            <button ion-button icon-left clear small (click)="nolikeClick(item,i)">
+            <ion-col col-3>
+              <button ion-button icon-left clear small (click)="nolikeClick(item,i)">
                 <ion-icon name="md-thumbs-down" color="danger"></ion-icon>
                 <div>{{item.nolike}}</div>
               </button>
-          </ion-col>
+            </ion-col>
 
-          <ion-col>
-            <button ion-button icon-left clear small (click)="openCommentsModal(item)">
-              <ion-icon name="text"></ion-icon>
-              <div text-capitalize>{{item.comments.length }}</div>
-            </button>
-          </ion-col>
+            <ion-col col-3>
+              <button ion-button icon-left clear small (click)="openCommentsModal(item)">
+                <ion-icon name="text"></ion-icon>
+                <div text-capitalize>{{item.comments.length }}</div>
+              </button>
+            </ion-col>
 
-          <ion-col>
-            <button ion-button icon-left clear small>
-              <ion-icon name="md-more"></ion-icon>
-              <!-- <div text-capitalize>{{item.comments.length }} Califíquenos</div> -->
-            </button>
-          </ion-col>
+            <ion-col col-3>
+                <button ion-button icon-left clear small (click)="optionsBar(item)">
+                    <ion-icon name="md-more"></ion-icon>
+                </button>
+              <!-- <ion-select interface="popover" [(ngModel)]="data" (ionChange)="cambios()">                
+                     <ion-option value="10">10</ion-option>
+                     <ion-option value="20">20</ion-option>
+                 </ion-select> -->
+            </ion-col>
 
-        </ion-row>
+          </ion-row>
+        </ion-grid>
+     
   
-      </ion-card>
+        <!-- <ion-select interface="action-sheet" cancelText="Cancelar" okText="Selecionar" [(ngModel)]="selectedYear" (ionChange)="getItems()">
+            <ion-option *ngFor="let year of informacion" [value]="year.name">{{year.name}}</ion-option>
+          </ion-select>-->
+      </ion-card> 
 
 </ion-content>

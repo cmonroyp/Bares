@@ -1,0 +1,80 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title text-center>Ubicacion</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="closeModal()">
+              <span ion-text></span>
+              <ion-icon name="close-circle"></ion-icon>
+            </button>
+          </ion-buttons>
+      </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list *ngFor="let pos of posicion">
+    <ion-list-header text-center>
+      Posicion
+    </ion-list-header>
+    <ion-item>
+     lat: {{pos.position[0].lat}}; lng: {{pos.position[0].lng}}
+    </ion-item> 
+    
+    <!-- <ion-card class="adv-map">
+        <img src="assets/imgs/advance-card-map-paris.png">
+        <ion-fab right top>
+          <button ion-fab>
+            <ion-icon name="pin"></ion-icon>
+          </button>
+        </ion-fab>
+
+        <ion-item>
+            <ion-icon name="wine" item-left large ></ion-icon>
+            <h2>{{pos.name}}</h2>
+            <p>{{pos.address}}</p>
+        </ion-item>
+
+        <ion-item>
+            <span item-left>18 min</span>
+            <span item-left>(2.6 mi)</span>
+            <button ion-button icon-left clear item-end>
+              <ion-icon name="navigate"></ion-icon>
+              Start
+            </button>
+         </ion-item>
+
+    </ion-card> -->
+
+    <!-- <ion-card> -->
+      <div class="div-card" style="position: relative;border-bottom: 2px">
+
+        <div>
+            <img src="assets/imgs/advance-card-map-paris.png">
+            <ion-fab right top>
+              <button ion-fab color="secondary">
+                <ion-icon name="pin"></ion-icon>
+              </button>
+            </ion-fab>
+        </div>
+        <ion-item>
+            <ion-icon name="wine" item-left large ></ion-icon>
+            <h2>{{pos.name}}</h2>
+            <p>{{pos.address}}</p>
+        </ion-item>
+  
+        <ion-item actions>
+          <span ion-text item-start color="secondary" class="item-bold">26 min</span>
+          <span ion-text item-start color="subtle">(8.1 mi)</span>
+          <button ion-button color="secondary" clear item-end icon-start>
+            <ion-icon name='navigate'></ion-icon>
+            Start
+          </button>
+        </ion-item>
+      </div>
+
+    <!-- </ion-card> -->
+
+  </ion-list>
+</ion-content>

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
 import { BARES } from '../../data/bar.datamodel';
 import { ModalcommentPage } from './modalcomment/modalcomment';
-
-
+import { ModalpositionPage } from '../modalposition/modalposition';
+import { ModalreservasPage } from '../modalreservas/modalreservas';
 
 @IonicPage()
 @Component({
@@ -22,6 +22,10 @@ export class OncardPage {
   countComent:number;
   informacion:any[]= [];
 
+  searchQuery: string = '';
+  data:any;
+  //position =[];
+
   comments =[
     {idx:0,comment:'Me gusto mucho, la atencion es excelente lo voy a recomendar a mis amigos.'},
     {idx:1,comment:'Lo Recomiendo'},
@@ -37,14 +41,99 @@ export class OncardPage {
   //   {5:'Me encantó.',comment:''}
   // ]
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public modalCtrl: ModalController) {
+              public modalCtrl: ModalController,
+              private alertCtrl: AlertController) {
   }
 
+  cambios(){
+    console.log(this.data)
+  }
   ionViewDidLoad(){
-    this.informacion = BARES;
+    this.listado_Bares();
     console.log(this.informacion)
     // this.carga_imagenes();
     this.countComent = this.comments.length;
+  }
+
+  listado_Bares(){
+    this.informacion = BARES;
+  }
+
+  //barra de busqueda
+  getItems(ev: any){
+
+    this.listado_Bares();
+
+    let val = ev.target.value;
+    if(val && val.trim() != ''){
+      this.informacion = this.informacion.filter((item)=>{
+        return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1)
+      })
+    }
+  }
+
+  optionsBar(info:any){
+    let alert = this.alertCtrl.create();
+    alert.setTitle('Seleccione una Opcion.');
+
+    alert.addInput({
+      type: 'radio',
+      label: 'Ubicacion',
+      value: 'position',
+      //checked: true
+    });
+
+    alert.addInput({
+      type: 'radio',
+      label: 'Reservas',
+      value: 'reservas',
+     // checked: true
+    });
+
+    alert.addButton('Cancel');
+    alert.addButton({
+      text: 'OK',
+      handler: option => {
+        console.log('Radio data:', option);
+        this.sendOptions(info,option);
+        // this.testRadioOpen = false;
+        // this.testRadioResult = data;
+      }
+    });
+    
+    alert.present();
+  }
+  
+  sendOptions(info:any,option:any){
+console.log(info)
+    switch (option) {
+      case 'position':
+        //this.position = info;
+        
+        let modal = this.modalCtrl.create(ModalpositionPage,{'pos': info});
+            modal.present();
+        break;
+    
+      case 'reservas' :
+      let modalReserva = this.modalCtrl.create(ModalreservasPage,{'res': info});
+          modalReserva.present();
+        break;
+
+      default:
+        break;
+    }
+
+    // if(option == 'position'){
+
+    // }
+    // for (let item of datos) {
+    //   if(option = item)
+    //     this.position = option;
+    //     console.log(this.position)
+    // }
+    // console.log('informacion a enviar', info);
+    // console.log('indice array', idx);
+    // console.log('opcion seleccionada', option);
   }
   // carga_imagenes(){
     
@@ -59,11 +148,11 @@ export class OncardPage {
   //          })
   //      }
 
-  onModelChange(event:any,data:any,index:number){
-    // console.log(event)
-    // console.log(index)
-    // this.prueba(data,index);
-  }
+  // onModelChange(event:any,data:any,index:number){
+  //   // console.log(event)
+  //   // console.log(index)
+  //   // this.prueba(data,index);
+  // }
 
   qualitylike(items,idx){
 

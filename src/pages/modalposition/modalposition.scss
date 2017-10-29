@@ -1,0 +1,37 @@
+page-modalposition {
+
+// ion-fab[right] {
+//     right: 40px;
+// }
+
+// ion-fab[top] {
+//     top: 140px;
+// }
+
+// .card-md, .card-ios {
+//     background: #424242 !important;
+// }
+
+.div-card{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+ion-card.adv-map p {
+    font-size: 0.7em !important;
+    
+  }
+  
+  button[fab].fab-map {
+    top: calc(100% - 35px);
+    z-index: 50;
+  }
+  
+  .item-bold {
+    font-weight: bold;
+  }
+  
+  ion-content.cards-bg {
+    background-color: #f4f4f7;
+  }
+
+}
