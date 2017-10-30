@@ -23,9 +23,20 @@
       <ion-icon name="ios-beer-outline" item-left large ></ion-icon>
       <h2 item-start>{{item.mesa}}</h2>
       <!-- <div item-end *ngIf="state; then checked="true" ">{{item.estado[0].state}}</div> -->
-      <p item-end *ngIf="item.estado[0].state === 'reservada'" checked="true">{{item.estado[0].state}}</p>
-      <p item-end *ngIf="item.estado[0].state === 'libre' " checked="false" disabled>{{item.estado[0].state}}</p>
-      <ion-toggle></ion-toggle>
+      <p item-end>{{item.estado[0].state}}</p>
+      <!-- <ion-toggle></ion-toggle> -->
+      <!-- <ion-toggle color="secondary" checked="true" 
+                  (ionChange)="checkReservas()"
+                  [(ngModel)]="reservasCheck">
+      </ion-toggle> -->
+      <!-- <ion-label item-end>{{item.estado[0].state}}</ion-label> -->
+      <ion-toggle [checked]="item.checked"
+                  [(ngModel)]="item.checked"
+                  (ionChange)="checkReservas(item.checked)"
+                  [disabled]="item.checked">
+      </ion-toggle>
     </ion-item>
+    <!-- <ion-item>
+    </ion-item> -->
   </ion-list>
 </ion-content>
