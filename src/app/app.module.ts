@@ -19,7 +19,7 @@ import { Ionic2RatingModule } from 'ionic2-rating';
   declarations: [
     MyApp,
     HomePage,
-    OncardPage,
+   OncardPage,
     TwocardsPage,
     ModalcommentPage,
     ModalpositionPage,
@@ -28,7 +28,9 @@ import { Ionic2RatingModule } from 'ionic2-rating';
   imports: [
     BrowserModule,
     Ionic2RatingModule, // Put ionic2-rating module here
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{
+      scrollAssist: false //hace que no se superponga ne los inputs.
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, AlertController, ToastController } from 'ionic-angular';
 import { BARES } from '../../data/bar.datamodel';
 import { ModalcommentPage } from './modalcomment/modalcomment';
 import { ModalpositionPage } from '../modalposition/modalposition';
@@ -33,21 +33,30 @@ export class OncardPage {
     {idx:3,comment:'Falta Mejorar'}
   ] 
 
-  // rate =[
-  //   {1:'No me gustó en Absoluto.',comment:''},
-  //   {2:'No me gustó.',comment:''},
-  //   {3:'Está Bien.',comment:''},
-  //   {4:'Me gustó.',comment:''},
-  //   {5:'Me encantó.',comment:''}
-  // ]
+  
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public modalCtrl: ModalController,
-              private alertCtrl: AlertController) {
+              private alertCtrl: AlertController,
+              private toastCtrl: ToastController) {
+
+           
   }
+
+  // saludo(){
+
+  //   let toast = this.toastCtrl.create({
+  //     message: `Bienvenido ${this.welcome}!.`,
+  //     showCloseButton: true,
+  //     closeButtonText: 'Ok'
+  //   });
+  //   toast.present();
+
+  // }
 
   cambios(){
     console.log(this.data)
   }
+  
   ionViewDidLoad(){
     this.listado_Bares();
     console.log(this.informacion)
@@ -75,7 +84,7 @@ export class OncardPage {
   optionsBar(info:any){
     let alert = this.alertCtrl.create();
     alert.setTitle('Seleccione una Opcion.');
-
+    alert.setMode('ios');
     alert.addInput({
       type: 'radio',
       label: 'Ubicacion',
@@ -165,9 +174,11 @@ console.log(info)
       nolike: items.nolike,
       calification: items.calification ,
       address: items.address,
-      comments: items.comments
+      comments: items.comments,
+      position: items.position,
+      horario: items.horario
     }
-
+    //console.log('posicion like', object)
    this.informacion.splice(idx, 1,object);
 
   }
@@ -183,7 +194,9 @@ console.log(info)
           nolike: nolikeQuality,
           calification: items.calification ,
           address: items.address,
-          comments: items.comments
+          comments: items.comments,
+          position: items.position,
+          horario: items.horario
         }
     
        this.informacion.splice(idx, 1,object);

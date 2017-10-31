@@ -72,7 +72,7 @@
               </ion-col>
             </ion-row> -->
           <ion-row>
-            <ion-col>
+            <ion-col col-2 col-sm>
               {{item.rate | number}}
             </ion-col>
             <ion-col>
@@ -85,10 +85,13 @@
                       nullable="false"> 
               </rating>
             </ion-col>
-            <ion-col>
+            <ion-col col-sm>
              ( {{item.calification}} )
             </ion-col>
           </ion-row>
+          <ion-col no-padding col-sm>
+          <h6>{{item.horario}}</h6> 
+          </ion-col>
         </ion-item>
           <img [src]="item.img" style="width:100%; height:70%">
   

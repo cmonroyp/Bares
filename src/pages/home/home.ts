@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ToastController, NavParams } from 'ionic-angular';
 import { OncardPage } from '../oncard/oncard';
 import { TwocardsPage } from '../twocards/twocards';
 
@@ -9,8 +9,12 @@ import { TwocardsPage } from '../twocards/twocards';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  welcome:string = "";
+  constructor(public navCtrl: NavController,
+              private toastCtrl: ToastController,
+              public navParams: NavParams) {
 
+       this.welcome = this.navParams.get('welcome');
   }
 
   openPageOne(){
@@ -21,4 +25,17 @@ export class HomePage {
     this.navCtrl.push(TwocardsPage)
   }
 
+  ionViewDidLoad(){
+    this.saludo();
+  }
+
+  saludo(){
+    
+    let toast = this.toastCtrl.create({
+      message: `Bienvenido ${this.welcome}!.`,
+      duration: 2000,
+      position: 'top'
+    });
+    toast.present();
+  }
 }

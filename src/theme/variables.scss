@@ -38,10 +38,12 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  facebook: #3b5998
 );
 
-
+//$toast-ios-background : rgb(11, 252, 172);
+$toast-md-background : rgb(38, 161, 177);
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
