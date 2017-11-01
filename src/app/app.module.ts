@@ -29,7 +29,12 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     BrowserModule,
     Ionic2RatingModule, // Put ionic2-rating module here
     IonicModule.forRoot(MyApp,{
-      scrollAssist: false //hace que no se superponga ne los inputs.
+    scrollAssist: false, //hace que no se superponga ne los inputs.
+    toastEnter:	'toast-slide-in',
+    toastLeave:	'toast-slide-out',
+    modalEnter: 'modal-slide-in',
+    modalLeave: 'modal-slide-out',
+    pageTransition: 'ios-transition'
     })
   ],
   bootstrap: [IonicApp],

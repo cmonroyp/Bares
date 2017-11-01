@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, AlertController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
 import { BARES } from '../../data/bar.datamodel';
 import { ModalcommentPage } from './modalcomment/modalcomment';
 import { ModalpositionPage } from '../modalposition/modalposition';
@@ -36,8 +36,7 @@ export class OncardPage {
   
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public modalCtrl: ModalController,
-              private alertCtrl: AlertController,
-              private toastCtrl: ToastController) {
+              private alertCtrl: AlertController) {
 
            
   }

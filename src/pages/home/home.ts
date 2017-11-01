@@ -31,10 +31,10 @@ export class HomePage {
 
   saludo(){
     
-    let toast = this.toastCtrl.create({
+    let toast = this.toastCtrl.create({      
       message: `Bienvenido ${this.welcome}!.`,
       duration: 2000,
-      position: 'top'
+      position: 'middle'
     });
     toast.present();
   }

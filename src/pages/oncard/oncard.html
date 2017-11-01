@@ -49,7 +49,7 @@
 
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
     <ion-card *ngFor="let item of informacion;let i = index">
-        <ion-item>
+        <ion-item class="item-card">
   
           <ion-card-title>{{item.name}}</ion-card-title>
           <!-- <ion-row>

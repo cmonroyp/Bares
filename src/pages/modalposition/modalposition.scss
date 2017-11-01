@@ -12,8 +12,23 @@ page-modalposition {
 //     background: #424242 !important;
 // }
 
+.list-header-md {
+  padding-left: 16px;
+  margin-bottom: 13px;
+  min-height: 4.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0);
+  font-size: 1.8rem;
+  color: #c2b6b6;
+}
+
+.list-md .item-block .item-inner {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
 .div-card{
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.13), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+   // box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 ion-card.adv-map p {
