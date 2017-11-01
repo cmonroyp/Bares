@@ -40,7 +40,7 @@ $colors: (
   light:      #f4f4f4,
   dark:       #222,
   facebook: #3b5998,
-  button-color:#7785ED,
+ // button-color:#7785ED,
 );
 
 //$toast-ios-background : rgb(11, 252, 172);
@@ -49,12 +49,22 @@ $colors: (
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
-$background-color:#4A4B56;
+//  $background-color:#97959E;
+// ion-app.md [padding] .scroll-content {
+//   padding: 16px;
+//   background-color: #97959E;
+// }
 
 .toolbar-background{
-  background-color: #4A4B56 !important; 
+  background-color: #003782 !important; 
   //background-image: -webkit-linear-gradient(left, #434343 0%, black 100%);
 }
+
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+  color: #e0e0e0 !important;
+  background-color: transparent;
+}
+
 
 .toolbar-title-ios{
   color: #dedede !important;
@@ -68,16 +78,16 @@ $background-color:#4A4B56;
 .toast-container{
   border-radius: 6px;
   text-align: center;
-  background: rgba(34, 34, 34, 0.47)  //rgba(67, 135, 36, 0.47);
+  background: rgba(73, 178, 235, 0.301)  //rgba(67, 135, 36, 0.47);
   }
 
-  .card-md{
-    background: #97959E !important;
-  }
-  .item-card{
-    background-color: #97959E !important;
-   // color:
-  }
+  // .card-md{
+  //   background: #97959E !important;
+  // }
+  // .item-card{
+  //   background-color: #97959E !important;
+  //  // color:
+  // }
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
