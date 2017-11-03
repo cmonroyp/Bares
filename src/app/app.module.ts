@@ -11,6 +11,7 @@ import { TwocardsPage } from './../pages/twocards/twocards';
 import { ModalcommentPage } from '../pages/oncard/modalcomment/modalcomment';
 import { ModalpositionPage } from '../pages/modalposition/modalposition';
 import { ModalreservasPage } from '../pages/modalreservas/modalreservas';
+import { MenuPage } from '../pages/menu/menu';
 
 // Import ionic2-rating module
 import { Ionic2RatingModule } from 'ionic2-rating';
@@ -19,6 +20,7 @@ import { Ionic2RatingModule } from 'ionic2-rating';
   declarations: [
     MyApp,
     HomePage,
+    MenuPage,
    OncardPage,
     TwocardsPage,
     ModalcommentPage,
@@ -41,6 +43,7 @@ import { Ionic2RatingModule } from 'ionic2-rating';
   entryComponents: [
     MyApp,
     HomePage,
+    MenuPage,
     OncardPage,
     TwocardsPage,
     ModalcommentPage,

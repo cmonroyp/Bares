@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { MenuPage } from '../menu/menu';
 //import { OncardPage } from '../oncard/oncard';
 
 
@@ -23,7 +24,7 @@ export class LoginPage {
 
   login(){
     if (this.userText == 'Admin' && this.pwd == '123' ){       
-      this.navCtrl.push(HomePage,{welcome:this.userText});
+      this.navCtrl.setRoot(MenuPage,{welcome:this.userText});
     }
   }
 
