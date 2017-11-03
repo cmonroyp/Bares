@@ -17,7 +17,7 @@ import { HomePage } from '../home/home';
 })
 export class MenuPage {
   @ViewChild(Nav) nav: Nav;
-  rootPage: any = HomePage;
+  rootPage: any = 'HomePage';
   pages: Array<{ title: string, component: any , icon:any}>;
 
   welcome:string = "";

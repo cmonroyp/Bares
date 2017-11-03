@@ -19,7 +19,7 @@ import { Ionic2RatingModule } from 'ionic2-rating';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
+   // HomePage,
     MenuPage,
    OncardPage,
     TwocardsPage,
@@ -32,17 +32,17 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     Ionic2RatingModule, // Put ionic2-rating module here
     IonicModule.forRoot(MyApp,{
     scrollAssist: false, //hace que no se superponga ne los inputs.
-    toastEnter:	'toast-slide-in',
-    toastLeave:	'toast-slide-out',
-    modalEnter: 'modal-slide-in',
-    modalLeave: 'modal-slide-out',
-    pageTransition: 'ios-transition'
+    // toastEnter:	'toast-slide-in',
+    // toastLeave:	'toast-slide-out',
+     modalEnter: 'modal-slide-in',
+     modalLeave: 'modal-slide-out',
+     pageTransition: 'ios-transition'
     })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+    //HomePage,
     MenuPage,
     OncardPage,
     TwocardsPage,

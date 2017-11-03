@@ -1,9 +1,3 @@
-<!--
-  Generated template for the OncardPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   
     <ion-navbar>
@@ -17,62 +11,98 @@
 
 <ion-content padding>
 
-    <!-- <ion-grid>
-        <ion-row>
-            <ion-col col-4>
-                <ion-item>
-                    <ion-label stacked>Filter</ion-label>
-                    <ion-select interface="popover">
-                        <ion-option value="10">10</ion-option>
-                        <ion-option value="20">20</ion-option>
-                    </ion-select>
-                </ion-item>
-            </ion-col>
-            <ion-col col-4>
-                <ion-item>
-                    <ion-label>Due Date</ion-label>
-                    <ion-select interface="popover">
-                        <ion-option value="10">10</ion-option>
-                        <ion-option value="20">20</ion-option>
-                    </ion-select>
-                </ion-item>
-            </ion-col>
-            <ion-col col-4>
-                <ion-item>
-                    <ion-label>Descending</ion-label>
-                    <ion-select interface="popover">
-                        <ion-option value="10">10</ion-option>
-                        <ion-option value="20">20</ion-option>
-                    </ion-select>
-                </ion-item>
-            </ion-col>
-        </ion-row>
-    </ion-grid> -->
-
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+  <!-- <ion-list no-lines [virtualScroll]="informacion" approxItemHeight="800px" approxItemWidth="600px">
+    <ion-item *virtualItem="let item">
+
+        <ion-item class="item-card">
+            
+          <ion-card-title>{{item.name}}</ion-card-title>
+              <ion-row>
+                <ion-col col-2 col-sm>
+                  {{item.rate | number}}
+                </ion-col>
+                <ion-col>
+                  <rating [(ngModel)]="item.rate"
+                          readOnly="true"
+                          max="5"
+                          emptyStarIconName="star-outline"
+                          halfStarIconName="star-half"
+                          starIconName="star"
+                          nullable="false"> 
+                  </rating>
+                </ion-col>
+                <ion-col col-sm>
+                  ( {{item.calification}} )
+                </ion-col>
+              </ion-row>
+              <ion-col no-padding col-sm>
+                <h6>{{item.horario}}</h6> 
+              </ion-col>
+         </ion-item>
+
+      <div>
+          <ion-img [src]="item.img" style="width:100%; height:200px"></ion-img>
+      </div>
+      <ion-card-content>    
+          <p>{{item.address}}</p>
+      </ion-card-content>
+
+      <ion-grid>
+          <ion-row>
+            <ion-col col-3>
+              <button ion-button icon-left clear small (click)="likeClick(item,i)">
+                <ion-icon name="md-thumbs-up"></ion-icon>
+                <div>{{item.like}}</div>
+              </button>
+            </ion-col>
+
+            <ion-col col-3>
+              <button ion-button icon-left clear small (click)="nolikeClick(item,i)">
+                <ion-icon name="md-thumbs-down" color="danger"></ion-icon>
+                <div>{{item.nolike}}</div>
+              </button>
+            </ion-col>
+
+            <ion-col col-3>
+              <button ion-button icon-left clear small (click)="openCommentsModal(item)">
+                <ion-icon name="text"></ion-icon>
+                <div text-capitalize>{{item.comments.length }}</div>
+              </button>
+            </ion-col>
+
+            <ion-col col-3>
+                <button ion-button icon-left clear small (click)="optionsBar(item)">
+                    <ion-icon name="md-more"></ion-icon>
+                </button>
+            </ion-col>
+
+          </ion-row>
+        </ion-grid>
+
+    </ion-item>    
+  </ion-list> -->
+
+  <!-- <ion-card>
+      <ion-card-content>
+        <ion-list [virtualScroll]="informacion" approxItemHeight="85px">
+          <ion-item *virtualItem="let item">
+            <ion-label>
+              <h2>{{item.name}}</h2>
+     
+              <p> {{item.rate | number}}</p>
+              <ion-img [src]="item.img" style="width:100%; height:100%"></ion-img>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card> -->
+
     <ion-card *ngFor="let item of informacion;let i = index">
         <ion-item class="item-card">
   
           <ion-card-title>{{item.name}}</ion-card-title>
-          <!-- <ion-row>
-            <ion-col col-12>
-              <rating [(ngModel)]="item.rate"
-                      readOnly="false"
-                      max="5"
-                      emptyStarIconName="star-outline"
-                      halfStarIconName="star-half"
-                      starIconName="star"
-                      nullable="false"
-                      (ngModelChange)="onModelChange($event)"> 
-              </rating>
-            </ion-col>
-              <ion-col col-5>
-                {{item.rate}}
-              </ion-col>
-              <ion-col col-4>
-                (60)
-              </ion-col>
-            </ion-row> -->
           <ion-row>
             <ion-col col-2 col-sm>
               {{item.rate | number}}
@@ -96,13 +126,8 @@
           </ion-col>
         </ion-item>
           <img [src]="item.img" style="width:100%; height:70%">
-  
-        
-        <!-- <img src="http://placehold.it/500x200" /> -->
-        
-        <ion-card-content>
-          <!-- <ion-card-title>Bar Milenium</ion-card-title> -->
-    
+          
+        <ion-card-content>    
           <p>{{item.address}}</p>
         </ion-card-content>
   
@@ -112,7 +137,6 @@
               <button ion-button icon-left clear small (click)="likeClick(item,i)">
                 <ion-icon name="md-thumbs-up"></ion-icon>
                 <div>{{item.like}}</div>
-                <!-- <ion-badge item-end color="danger">{{like}}</ion-badge> -->
               </button>
             </ion-col>
 
