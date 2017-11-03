@@ -1,16 +1,12 @@
 page-home {
 
-    // .content-md {
-    //     color: #000;
-    //     background-color: #4A4B56;
-    // }
-
-    // .toolbar-background-md {
-    //     border-color: #4A4B56;
-    //     background: #4A4B56;
-    // }
-
-    // .toolbar-title-md {
-    //     color: #dedede;
-    // }
+    .background {
+		background: url('../assets/imgs/home.jpg')no-repeat center center fixed;
+		background-size: cover;
+    }
+    
+    button[fab].fab-map {
+    top: calc(100% - 35px);
+    z-index: 50;
+  }
 }

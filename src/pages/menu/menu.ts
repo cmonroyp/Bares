@@ -18,7 +18,7 @@ import { HomePage } from '../home/home';
 export class MenuPage {
   @ViewChild(Nav) nav: Nav;
   rootPage: any = HomePage;
-  pages: Array<{ title: string, component: any }>;
+  pages: Array<{ title: string, component: any , icon:any}>;
 
   welcome:string = "";
 
@@ -29,9 +29,9 @@ export class MenuPage {
     console.log(this.welcome);
     
     this.pages = [
-      // { title: 'Home', component: HomePage },
-      { title: 'Bares', component: OncardPage },
-      { title: 'Sign in', component: 'LoginPage' },
+      { title: 'Home', component: HomePage,icon:'home' },
+      { title: 'Bares', component: OncardPage,icon:'beer' },
+      { title: 'Sign in', component: 'LoginPage',icon:'ios-key' },
      // { title: 'Signup', component: 'SignupPage' },
     ];
 
@@ -40,12 +40,12 @@ export class MenuPage {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    // this.nav.setRoot(page.component);
-    this.nav.push(page.component);
+     this.nav.setRoot(page.component);
+    //this.nav.push(page.component);
   }
 
   ionViewDidLoad(){
-    this.saludo();
+   //this.saludo();
   }
 
   saludo(){

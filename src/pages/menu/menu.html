@@ -1,6 +1,6 @@
-<ion-menu [content]="content">
-  <ion-content>
-    <ion-list>
+<!-- <ion-menu [content]="content">
+  <ion-content padding>
+    <ion-list class="listMenu">
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
@@ -8,4 +8,36 @@
   </ion-content>
 </ion-menu>
 
-<ion-nav #content [root]="rootPage"></ion-nav>
+<ion-nav #content [root]="rootPage"></ion-nav> -->
+
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>   
+        <ion-item style="background-color: transparent !important" no-lines>
+            <ion-row>
+              <ion-avatar>
+                  <img src="assets/icon/favicon.ico" style="height: 32px; width: 32px">
+              </ion-avatar>
+              <ion-col>
+                  <ion-title >Aplicacion App</ion-title>
+              </ion-col>
+            </ion-row>
+          </ion-item> 
+    </ion-toolbar>
+  </ion-header>
+ 
+  <ion-content padding style="background-color:#343c54 !important">
+    <ion-list class="listMenu">
+      <button style="background-color:#343c54 !important"
+              ion-item menuClose 
+              *ngFor="let p of pages" 
+              (click)="openPage(p)">
+          <ion-icon item-start [name]="p.icon" color="light" ></ion-icon>
+          <ion-label>{{ p.title }}</ion-label> 
+        </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+ 
+<!-- main navigation -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -40,6 +40,7 @@ $colors: (
   light:      #f4f4f4,
   dark:       #222,
   facebook: #3b5998,
+  toolbar: #343c54,
  // button-color:#7785ED,
 );
 
@@ -49,14 +50,16 @@ $colors: (
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
-//  $background-color:#97959E;
+//  $background-color:#e0e0e0;
 // ion-app.md [padding] .scroll-content {
 //   padding: 16px;
 //   background-color: #97959E;
 // }
-
+.content-md {
+  background-color: #e0e0e0;
+}
 .toolbar-background{
-  background-color: #003782 !important; 
+  background-color: #343c54 !important; 
   //background-image: -webkit-linear-gradient(left, #434343 0%, black 100%);
 }
 
@@ -76,10 +79,11 @@ $colors: (
 
  //Estylo para los Toast
 .toast-container{
-  border-radius: 6px;
-  text-align: center;
+  border-radius: 6px !important;
+  text-align: center !important;
   background: rgba(73, 178, 235, 0.301)  //rgba(67, 135, 36, 0.47);
   }
+
 
   // .card-md{
   //   background: #97959E !important;
