@@ -8,3 +8,8 @@ git push -u origin master --enviamos los archivos al repositorio gitHub
 1. git clone https://github.com/cmonroyp/Bares.git
 2. instalar los modules => npm install
 3. ionic serve
+
+--Como crear un release o Tag
+1. git tag -a v1.0.0 -m "Version release"
+2. git tag => puedo ver todas las versiones creadas.
+3. git push --tags
